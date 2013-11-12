@@ -33,11 +33,11 @@ zeromq zeromq-devel \
 zlib zlib-devel
 
 # -- create temporary directory for source
-random=$(( RANDOM ))
-TEMP_PATH=$( printf "/tmp/build-%05g" $random )
+random=$( date +%Y%m%d%M%S )
+TEMP_PATH=$( printf "%s/build-%s" $HOME $random )
 mkdir -p $TEMP_PATH
 
-cp $TEMP_PATH
+cd $TEMP_PATH
 
 # ANTLR2
 # ------
